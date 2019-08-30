@@ -193,5 +193,106 @@
       </TableControl>
     </View>
 
+    <View>
+      <Name>SecurityFever.UniFiSecurityGateway.Firewall.Log</Name>
+      <ViewSelectedBy>
+        <TypeName>SecurityFever.UniFiSecurityGateway.Firewall.Log</TypeName>
+      </ViewSelectedBy>
+      <TableControl>
+        <TableHeaders>
+          <TableColumnHeader>
+            <Label>Time</Label>
+            <Width>10</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Device</Label>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Zone</Label>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Rule</Label>
+            <Width>8</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Action</Label>
+            <Width>8</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Source IP</Label>
+            <Width>16</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Destionation IP</Label>
+            <Width>16</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Protocol</Label>
+            <Width>8</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Port</Label>
+            <Width>8</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Flag</Label>
+            <Width>12</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Src Int.</Label>
+            <Width>10</Width>
+          </TableColumnHeader>
+          <TableColumnHeader>
+            <Label>Dst Int.</Label>
+            <Width>10</Width>
+          </TableColumnHeader>
+        </TableHeaders>
+        <TableRowEntries>
+          <TableRowEntry>
+            <TableColumnItems>
+              <TableColumnItem>
+                <ScriptBlock>'{0:HH:mm:ss}' -f $_.DateTime</ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>$_.Device.ToUpper()</ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Zone</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <ScriptBlock>$_.Rule.Replace('default', 'Default')</ScriptBlock>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Action</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SrcIP</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DstIP</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Proto</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DstPRT</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>Flag</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>SrcIF</PropertyName>
+              </TableColumnItem>
+              <TableColumnItem>
+                <PropertyName>DstIF</PropertyName>
+              </TableColumnItem>
+            </TableColumnItems>
+          </TableRowEntry>
+        </TableRowEntries>
+      </TableControl>
+    </View>
+
   </ViewDefinitions>
 </Configuration>
